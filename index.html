@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Pricing Optimizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class', // Enable class-based dark mode
+      theme: {
+        extend: {
+          colors: {
+            'theme-blue': {
+              DEFAULT: '#38bdf8', // sky-400
+              light: '#bae6fd',   // sky-200
+              lighter: '#e0f2fe', // sky-100
+              dark: '#0284c7',    // sky-600
+              darker: '#0369a1',   // sky-700
+              'chat-text-light': '#0369a1', // For AI text on light bg
+              'chat-text-dark': '#e0f2fe', // For AI text on dark bg
+            },
+            'theme-green': {
+              DEFAULT: '#34d399', // emerald-400
+              light: '#a7f3d0',   // emerald-200
+              lighter: '#d1fae5', // emerald-100
+              dark: '#059669',    // emerald-600
+              darker: '#047857',   // emerald-700
+              'chat-text-light': '#047857', // For User text on light bg
+              'chat-text-dark': '#d1fae5', // For User text on dark bg
+            },
+            'theme-green-peach': {
+              light: '#B1C197',   // A lighter, soft, warm green
+              DEFAULT: '#8FA871', // A muted, medium, warm green (green peach)
+              dark: '#71895A',    // A darker version of green peach
+            },
+            'brand-primary': {
+              DEFAULT: '#0D9488', 
+              light: '#2DD4BF',   
+              dark: '#047857',    
+              darker: '#065F46',  
+              darkest: '#064E3B'  
+            },
+            'brand-secondary': {
+              DEFAULT: '#F59E0B', 
+              light: '#FCD34D',   
+              dark: '#D97706'     
+            }
+          },
+           backdropBlur: {
+            xs: '2px',
+            sm: '4px',
+            md: '8px',
+            lg: '12px',
+            xl: '16px',
+          }
+        }
+      },
+      plugins: []
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0",
+    "uuid": "https://esm.sh/uuid@^9.0.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-gradient-to-br from-theme-blue-lighter via-theme-green-lighter to-theme-blue-lighter dark:from-theme-blue-darker dark:via-theme-green-darker dark:to-theme-blue-darker transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
